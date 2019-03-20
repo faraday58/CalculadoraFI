@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorDisplay">#448AFF</color>
+    <color name="colorPrimary">#9E9E9E</color>
+    <color name="colorPrimaryDark">#616161</color>
+    <color name="colorAccent">#536DFE</color>
+    <color name="colorDisplay">#172547</color>
+    <color name="white">#FFFFFF</color>
 
     <!-- Colores de botones -->
     <color name="colorBotonBG">#333333</color>
     <color name="colorBotonText">#FFFFFF</color>
     <color name="colorBotonNumBG">#695F5F</color>
+    <color name="colorBotonNumPresBG">#17E46F</color>
 </resources>
