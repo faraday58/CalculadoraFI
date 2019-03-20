@@ -4,12 +4,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView txtv_disp_opera;
     TextView txtv_disp_resultado;
+    Button btnClear;
+    String texto_opera;
+    int n;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +21,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txtv_disp_opera = findViewById(R.id.txtv_disp_opera);
         txtv_disp_resultado = findViewById(R.id.txtv_disp_resultado);
+        btnClear = findViewById(R.id.btn_clear);
         txtv_disp_opera.setText("");
         txtv_disp_resultado.setText("");
+
+        btnClear.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                try
+                {
+                    texto_opera="";
+                    txtv_disp_opera.setText(texto_opera);
+                }catch ( IndexOutOfBoundsException error) {
+                    Log.d("Clear", "No se puede eliminar más ");
+                }
+
+                return false;
+            }
+        });
     }
     public void onClick(View v)
     {
         int seleccion= v.getId();
-        String texto_opera= txtv_disp_opera.getText().toString();
-        int n=texto_opera.length();
+        texto_opera= txtv_disp_opera.getText().toString();
+        n=texto_opera.length();
 
         switch (seleccion){
             case R.id.btn_uno:
@@ -72,10 +92,9 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("Clear", "No se puede eliminar más ");
                 }
                 break;
-
-
-
         }
+
+
 
     }
 
